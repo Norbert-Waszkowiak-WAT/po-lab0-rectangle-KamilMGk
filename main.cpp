@@ -1,31 +1,29 @@
-#include <iostream>
-
-using namespace std;
-
-class Rectangle{
-    private:
-    double width;
-    double height;
-    public:
-    Rectangle(double w,double h):width(w),height(h) {}
-    void setWidth(double w){
-        width=w;
-    }
-    double getWidth()const{
-        return width;
-    }
-    double getHeight()const{
-        return height;
-    }
-    double area() const{
-        return width*height;
-    }
-    double perimeter() const{
-        return (2 * (width + height));
-    }
-void display() const{
-    cout<<"Rectanagle: "<<width<<"x"<<height<<endl;
-    cout<<"Area: "<<area()<<endl;
-    cout<<"Perimeter: "<<perimeter()<<endl;
+#include "rectangle.cpp"
+ 
+int main() {
+    Rectangle rect(10, 5);
+ 
+    rect.display();
+ 
+    double width = rect.getWidth();
+    double height = rect.getHeight();
+    std::cout << "Width: " << width << ", Height: " << height << "\n";
+ 
+    double area = rect.area();
+    double perimeter = rect.perimeter();
+    std::cout << "Area: " << area << ", Perimeter: " << perimeter << "\n";
+ 
+    rect.setWidth(15);
+    rect.setHeight(8);
+    rect.display();
+ 
+    width = rect.getWidth();
+    height = rect.getHeight();
+    std::cout << "New Width: " << width << ", New Height: " << height << "\n";
+ 
+    area = rect.area();
+    perimeter = rect.perimeter();
+    std::cout << "New Area: " << area << ", New Perimeter: " << perimeter << "\n";
+ 
+    return 0;
 }
-};
